@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipeProject.Views.ContentViews.LoadingIndicatorView">
+  <ContentView.Content>
+        <Frame Padding="0"
+               BackgroundColor="#00000000">
+            <ActivityIndicator IsRunning="{Binding IsLoading}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               IsEnabled="{Binding IsLoading}"
+                               IsVisible="{Binding IsLoading}"></ActivityIndicator>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

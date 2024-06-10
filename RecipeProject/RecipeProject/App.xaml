@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipeProject.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ContentPage" >
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="ContentThemeColor">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}"/>
+            </Style>
+
+            <Style TargetType="Label" Class="ContentMediumStyle" BasedOn="{StaticResource ContentThemeColor}">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Frame" Class="TemplateFrameStyle">
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BorderColor" Value="Gray"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

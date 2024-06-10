@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customView="clr-namespace:RecipeProject.Views.ContentViews"
+             Title="{Binding Title}"
+             x:Class="RecipeProject.Views.RecipeDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid  Margin="10">
+                <StackLayout>
+                    <Image Source="{Binding Meal.strMealThumb}"
+                       Aspect="Fill"
+                          />
+                    <Label Text="{Binding Meal.strMeal}"
+                           FontSize="Title"
+                           Style="{StaticResource ContentThemeColor}"
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding Meal.strInstructions}"
+                           Style="{StaticResource ContentThemeColor}"
+                           FontSize="Body"/>
+                </StackLayout>
+                <customView:LoadingIndicatorView IsVisible="{Binding IsLoading}"/>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

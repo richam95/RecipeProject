@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customView="clr-namespace:RecipeProject.Views.ContentViews"
+             Title="{Binding Title}"
+             x:Class="RecipeProject.CategoryPage">
+    <Grid>
+        <CollectionView x:Name="categories" ItemsSource="{Binding Categories}"
+                        Margin="10" VerticalScrollBarVisibility="Never"
+                        HorizontalScrollBarVisibility="Never">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame StyleClass="TemplateFrameStyle">
+                        <Grid ColumnDefinitions="0.5*,*"
+                              Margin="10">
+                            <Image Source="{Binding strCategoryThumb}"
+                                   Grid.Column="0"/>
+                            <Label Text="{Binding strCategory}"
+                                   Grid.Column="1"
+                                   StyleClass="ContentMediumStyle"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SelectCategoryCommand,Source={x:Reference categories}}" CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <customView:LoadingIndicatorView IsVisible="{Binding IsLoading}"/>
+    </Grid>
+</ContentPage>
